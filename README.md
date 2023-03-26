@@ -1,11 +1,18 @@
 # dotnet and WASM
 
-You need dotnet >=7.0 and nodejs>=18.15.0.
+This is a demo application shows how .NET and WebAssembly (WASM) work together.  
+The demo application is a simple class written in C#. You can find the code sample in the `Program.cs`.
+
+WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine.  
+It is designed as a portable compilation target for programming languages,  
+enabling deployment on the web for client and server applications.
+
+For this demo you need `dotnet>=7.0` and `nodejs>=18.15.0`.
 
 - <https://dotnet.microsoft.com/en-us/download>
 - <https://nodejs.org/en>
 
-Install the wasm-tools.
+First, install the wasm-tools.
 
 ```bash
 sudo dotnet workload install wasm-tools
@@ -17,11 +24,13 @@ Publish:
 dotnet publish --configuration Release
 ```
 
-Run the web server:
+Run the webserver:
 
 ```bash
-npx serve bin/Release/net7.0/browser-wasm/AppBundle
+npx serve@latest bin/Release/net7.0/browser-wasm/AppBundle
 ```
+
+Open your webbrowser and navigate to <http://localhost:3000>.
 
 ## Additional information
 
