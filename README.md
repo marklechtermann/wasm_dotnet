@@ -32,6 +32,20 @@ npx serve@latest bin/Release/net7.0/browser-wasm/AppBundle
 
 Open your webbrowser and navigate to <http://localhost:3000>.
 
+## Docker
+
+Build the docker image:
+
+```bash
+docker build -t dotnet-wasm .
+```
+
+Run the docker container:
+
+```bash
+docker run -it -p 80:80 dotnet-wasm
+```
+
 ## Additional information
 
 - <https://learn.microsoft.com/en-us/aspnet/core/client-side/dotnet-interop?view=aspnetcore-7.0>

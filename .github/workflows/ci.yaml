@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "src/**"
+      - "Dockerfile"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Docker Build
+        run: |
+          docker build --build-arg K8SVERSION=$GITHUB_SHA -t ghcr.io/marklechtermann/wasm_dotnet:latest .
+      - name: Docker Push
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          docker push ghcr.io/marklechtermann/wasm_dotnet:latest
+      - name: Docker Logout
+        if: always()
+        run: docker logout
