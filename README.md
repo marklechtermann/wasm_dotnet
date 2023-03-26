@@ -34,16 +34,17 @@ Open your webbrowser and navigate to <http://localhost:3000>.
 
 ## Docker
 
-Build the docker image:
+You can also run the application in a docker container.
 
 ```bash
-docker build -t dotnet-wasm .
+docker run -it -p 80:80 ghcr.io/marklechtermann/wasm_dotnet:latest
 ```
 
-Run the docker container:
+Or if you want to build the docker image yourself:
 
 ```bash
-docker run -it -p 80:80 dotnet-wasm
+docker build -t ghcr.io/marklechtermann/wasm_dotnet:latest .
+docker run -it -p 80:80 ghcr.io/marklechtermann/wasm_dotnet:latest
 ```
 
 ## Additional information
