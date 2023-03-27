@@ -1,5 +1,7 @@
 # dotnet and WASM
 
+[![CI](https://github.com/marklechtermann/wasm_dotnet/actions/workflows/ci.yaml/badge.svg)](https://github.com/marklechtermann/wasm_dotnet/actions/workflows/ci.yaml)
+
 This is a demo application shows how .NET and WebAssembly (WASM) work together.  
 The demo application is a simple class written in C#. You can find the code sample in the `Program.cs`.
 
